@@ -17,7 +17,9 @@ use Spatie\LaravelMarkdown\MarkdownRenderer;
 
 Route::get('/', function () {
     $article = Article::all()->first();
-    $html = app(MarkdownRenderer::class)->toHtml($article->body);
+    $html = app(MarkdownRenderer::class)
+        ->highlightTheme('dracula')
+        ->toHtml($article->body);
     return Blade::render(
         "
             @extends('welcome')
