@@ -9,9 +9,11 @@
         @livewireStyles
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="antialiased">
+    <body class="antialiased bg-black text-white">
 
-        @yield('content')
+        <div class="mx-auto py-10 prose prose-invert">
+            @yield('content')
+        </div>
 
         @livewireScripts
     </body>
